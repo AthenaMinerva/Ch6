@@ -17,7 +17,7 @@ public class ShoppingCart
     private int itemCount;      // total number of items in the cart
     private double totalPrice;  // total price of items in the cart
     private int capacity;       // current cart capacity
-    //TODO 1a) Declare a cart instance variable
+    private String[] cart;      //Declare a cart instance variable
 
 
     /**
@@ -28,8 +28,7 @@ public class ShoppingCart
         capacity = 5;
         itemCount = 0;
         totalPrice = 0.0;
-        //TODO 1a) Initialize the cart instance variable to the appropriate size
-
+        cart = new String[capacity]; //Initialize the cart instance variable to the appropriate size
     }
 
     /**
@@ -41,6 +40,9 @@ public class ShoppingCart
     public void addToCart(String itemName, double price, int quantity)
     {
         //TODO 1b) Complete the addToCart method
+
+        cart[0] = itemName;
+        totalPrice += price*quantity;
 
     }
 
@@ -68,8 +70,8 @@ public class ShoppingCart
 	for (int i = 0; i < itemCount; i++)
 	{
 	    //contents += cart[i].toString() + "\n";
-        contents += String.format("%-15s%10.2f%10d%10.2f\n",cart[i].getName(),cart[i].getPrice(), cart[i].getQuantity(),
-                                                            (cart[i].getPrice()*cart[i].getQuantity()));
+//        contents += String.format("%-15s%10.2f%10d%10.2f\n",cart[i].getName(),cart[i].getPrice(), cart[i].getQuantity(),
+//                                                            (cart[i].getPrice()*cart[i].getQuantity()));
 
     }
 
