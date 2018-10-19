@@ -17,7 +17,7 @@ public class ShoppingCart
     private int itemCount;      // total number of items in the cart
     private double totalPrice;  // total price of items in the cart
     private int capacity;       // current cart capacity
-    private String[] cart;      //Declare a cart instance variable
+    private Item[] cart;      //Declare a cart instance variable
 
 
     /**
@@ -28,7 +28,7 @@ public class ShoppingCart
         capacity = 5;
         itemCount = 0;
         totalPrice = 0.0;
-        cart = new String[capacity]; //Initialize the cart instance variable to the appropriate size
+        cart = new Item[capacity]; //Initialize the cart instance variable to the appropriate size
     }
 
     /**
@@ -40,10 +40,8 @@ public class ShoppingCart
     public void addToCart(String itemName, double price, int quantity)
     {
         //TODO 1b) Complete the addToCart method
-
-        cart[0] = itemName;
+        cart[itemCount++] = new Item(itemName, price, quantity);
         totalPrice += price*quantity;
-
     }
 
     //TODO 2b) Complete the getter method getTotalPrice. Remember the getter should not print anything.
