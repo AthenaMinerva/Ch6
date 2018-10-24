@@ -41,7 +41,7 @@ public class Sales
         sum = 0;
         for (int i=0; i < sales.length; i++)
         {
-            System.out.println("\t " + i + "\t\t\t" + sales[i]);
+            System.out.println("\t " + (i+1) + "\t\t\t" + sales[i]);
             sum += sales[i];
         }
 
@@ -55,12 +55,12 @@ public class Sales
         //Use your indexOfMax method to print the index of the best sales person
         //and the sales amount for that sales person.
         int indexMax = indexOfMax(sales);
-        System.out.println("Best salesperson: " + indexMax + "\nTheir sales: " + sales[indexMax]);
+        System.out.println("Best salesperson: " + (indexMax+1) + "\nTheir sales: " + sales[indexMax]);
 
 
         //Do the same for the worst sales person
         int indexMin = indexOfMin(sales);
-        System.out.println("Worst salesperson: " + indexMin + "\nTheir sales: " + sales[indexMin]);
+        System.out.println("Worst salesperson: " + (indexMin+1) + "\nTheir sales: " + sales[indexMin]);
     }
 
     public static double average(int[] arr) throws IllegalStateException

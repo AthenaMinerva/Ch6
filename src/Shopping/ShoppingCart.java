@@ -39,13 +39,15 @@ public class ShoppingCart
      */
     public void addToCart(String itemName, double price, int quantity)
     {
-        //TODO 1b) Complete the addToCart method
+        //Complete the addToCart method
         cart[itemCount++] = new Item(itemName, price, quantity);
         totalPrice += price*quantity;
     }
 
-    //TODO 2b) Complete the getter method getTotalPrice. Remember the getter should not print anything.
-
+    //Complete the getter method getTotalPrice. Remember the getter should not print anything.
+    public double getTotalPrice(){
+        return totalPrice;
+    }
 
     public int getCartLength()
     {
@@ -68,9 +70,8 @@ public class ShoppingCart
 	for (int i = 0; i < itemCount; i++)
 	{
 	    //contents += cart[i].toString() + "\n";
-//        contents += String.format("%-15s%10.2f%10d%10.2f\n",cart[i].getName(),cart[i].getPrice(), cart[i].getQuantity(),
-//                                                            (cart[i].getPrice()*cart[i].getQuantity()));
-
+        contents += String.format("%-15s%10.2f%10d%10.2f\n",cart[i].getName(),cart[i].getPrice(), cart[i].getQuantity(),
+                                                           (cart[i].getPrice()*cart[i].getQuantity()));
     }
 
 	contents += "\nTotal Price: " + fmt.format(totalPrice);

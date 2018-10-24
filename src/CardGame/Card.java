@@ -1,9 +1,9 @@
 package CardGame;
 
 /**
- * Name:
- * Date:
- * Period:
+ * Name: Kate Johnson
+ * Date: 10/24/18
+ * Period: 1
  *
  * CardGame.Card.java
  *

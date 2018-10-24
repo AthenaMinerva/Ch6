@@ -1,9 +1,9 @@
 package CardGame;
 
 /**
- * Name:
- * Date:
- * Period:
+ * Name: Kate Johnson
+ * Date: 10/24/18
+ * Period: 1
  *
  * CardGame.DeckOfCards.java
  *
@@ -63,6 +63,18 @@ public class DeckOfCards {
         else
             return null; // return null to indicate no more cards
     }
-  
+
+    public int[] totalHand(Card[] hand) {
+        int[] totalHand = new int[13];
+        for(int i = 0; i<hand.length; i++){
+            if(hand[i].getFace() == "Ace"){
+                totalHand[0]+=1;
+            } else if(hand[i].getFace() == "Deuce"){
+                totalHand[1]+=1;
+            } else  if(hand[i].getFace() == "Three"){
+                totalHand[2]+=1;
+            } else
+        }
+    }
 }
 
