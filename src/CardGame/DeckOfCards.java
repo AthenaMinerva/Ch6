@@ -1,5 +1,7 @@
 package CardGame;
 
+import java.util.ArrayList;
+
 /**
  * Name: Kate Johnson
  * Date: 10/24/18
@@ -18,6 +20,7 @@ public class DeckOfCards {
     private String faces[] = {"Ace", "Deuce", "Three", "Four", "Five", "Six",
             "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
     private String suits[] = { "Hearts", "Diamonds", "Clubs", "Spades" };
+    private int values[] = {0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10};
 
     /**
      * Constructor fills a deck array with Card objects.
@@ -30,7 +33,7 @@ public class DeckOfCards {
 
         // populate deck with Card objects
         for (int count = 0; count < deck.length; count ++)
-            deck [ count ] = new Card(faces[count % 13], suits [count / 13]);
+            deck [ count ] = new Card(faces[count % 13], suits [count / 13], values[count % 13]);
 
     } // end DeckOfCards constructor
 
@@ -64,17 +67,12 @@ public class DeckOfCards {
             return null; // return null to indicate no more cards
     }
 
-    public int[] totalHand(Card[] hand) {
-        int[] totalHand = new int[13];
-        for(int i = 0; i<hand.length; i++){
-            if(hand[i].getFace() == "Ace"){
-                totalHand[0]+=1;
-            } else if(hand[i].getFace() == "Deuce"){
-                totalHand[1]+=1;
-            } else  if(hand[i].getFace() == "Three"){
-                totalHand[2]+=1;
-            } else
+    public int total(ArrayList<Card> hand){
+        int total = 0;
+        for(int i = 0; i < hand.size(); i++){
+            total += hand.get(i).getValue();
         }
+        return total;
     }
 }
 

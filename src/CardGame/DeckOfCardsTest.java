@@ -1,5 +1,7 @@
 package CardGame;
 
+import java.util.ArrayList;
+
 /**
  * Name: Kate Johnson
  * Date: 10/24/18
@@ -16,18 +18,17 @@ public class DeckOfCardsTest
     {
         DeckOfCards myDeckOfCards = new DeckOfCards();
         myDeckOfCards.shuffle(); // put Card objects in random order
-        Card[] hand1 = new Card[5];
+        ArrayList<Card> playerHand = new ArrayList<Card>();
 
         //deal one hand
-        for(int i  = 0; i < hand1.length; i++) {
-            hand1[i] = myDeckOfCards.dealCard();
+        for(int i  = 0; i < 2; i++) {
+            playerHand.add(myDeckOfCards.dealCard());
         }
 
         //print hand
-        System.out.println("The hand of player 1 is:");
-        System.out.printf("%-20s%-20s%-20s%-20s%-20s\n",
-                hand1[0].toString(), hand1[1].toString(),
-                hand1[2].toString(), hand1[3].toString(), hand1[4].toString());
+        System.out.println("Your hand is:\n" + playerHand.get(0).toString() + "\n" + playerHand.get(1).toString());
+        System.out.println("Total: " + myDeckOfCards.total(playerHand));
+
 
 /*        // -----------------------------------------------------------
         //  print all 52 Cards in the order in which they are dealt
