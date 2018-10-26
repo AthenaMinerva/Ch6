@@ -72,7 +72,25 @@ public class DeckOfCards {
         for(int i = 0; i < hand.size(); i++){
             total += hand.get(i).getValue();
         }
+
+        for(int i = 0; i < isAce(hand); i++) {
+            if(total + 11 <= 21) {
+                total+= 11;
+            } else {
+                total += 1;
+            }
+        }
         return total;
+    }
+
+    public int isAce(ArrayList<Card> hand) {
+        int count = 0;
+        for(int i = 0; i < hand.size(); i++) {
+            if(hand.get(i).getFace().equals("Ace")) {
+                count++;
+            }
+        }
+        return count;
     }
 }
 
